@@ -19,7 +19,7 @@ func Ping(request events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse
 	meta := make(map[string]string)
 	meta["CreatedAt"] = time.Now().Format(time.RFC3339)
 	resp := Response{
-		Payload: "Hello, friend!",
+		Payload: "Hello, friend! :^]",
 		Meta:    meta,
 	}
 
