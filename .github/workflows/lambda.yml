@@ -17,6 +17,8 @@ jobs:
           go-version: ${{ matrix.go-version }}
       - name: Build binary
         run: |
+          go get -u github.com/aws/aws-lambda-go/lambda
+          go get -u github.com/aws/aws-lambda-go/events
           CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -o helloWorld hello.go && zip deployment.zip helloWorld
       - name: default deploy
         uses: appleboy/lambda-action@master
